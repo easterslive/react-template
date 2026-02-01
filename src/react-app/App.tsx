@@ -1,66 +1,69 @@
-// src/App.tsx
+import React from "react";
+import ChatWidget from "./ChatWidget";
 
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
-import cloudflareLogo from "./assets/Cloudflare_Logo.svg";
-import honoLogo from "./assets/hono.svg";
-import "./App.css";
+export default function App() {
+  return (
+    <>
+      <header className="hero">
+        <div className="container">
+          <img
+            src="/logo.svg"
+            alt="Easters Digital Ecosystem Logo"
+            className="logo"
+            width={120}
+            height={120}
+          />
+          <h1>Easters.live</h1>
+          <p className="tagline">
+            Practical reselling playbooks and AI tools that help you build real side-hustle income.
+          </p>
+          <div className="cta-buttons">
+            <a href="/newsletter/" className="btn gold">
+              Join the Newsletter
+            </a>
+            <a href="/reselling/" className="btn outline">
+              Explore Reselling
+            </a>
+          </div>
+          <p className="subtag">Repeatable systems • Smarter listings • Faster workflows</p>
+        </div>
+      </header>
 
-function App() {
-	const [count, setCount] = useState(0);
-	const [name, setName] = useState("unknown");
+      <main className="grid">
+        <section className="card">
+          <h3>Reselling</h3>
+          <p>Step-by-step playbooks for sourcing, pricing, listing, shipping, and scaling your flips.</p>
+          <a href="/reselling/">Explore Reselling →</a>
+        </section>
 
-	return (
-		<>
-			<div>
-				<a href="https://vite.dev" target="_blank">
-					<img src={viteLogo} className="logo" alt="Vite logo" />
-				</a>
-				<a href="https://react.dev" target="_blank">
-					<img src={reactLogo} className="logo react" alt="React logo" />
-				</a>
-				<a href="https://hono.dev/" target="_blank">
-					<img src={honoLogo} className="logo cloudflare" alt="Hono logo" />
-				</a>
-				<a href="https://workers.cloudflare.com/" target="_blank">
-					<img
-						src={cloudflareLogo}
-						className="logo cloudflare"
-						alt="Cloudflare logo"
-					/>
-				</a>
-			</div>
-			<h1>Vite + React + Hono + Cloudflare</h1>
-			<div className="card">
-				<button
-					onClick={() => setCount((count) => count + 1)}
-					aria-label="increment"
-				>
-					count is {count}
-				</button>
-				<p>
-					Edit <code>src/App.tsx</code> and save to test HMR
-				</p>
-			</div>
-			<div className="card">
-				<button
-					onClick={() => {
-						fetch("/api/")
-							.then((res) => res.json() as Promise<{ name: string }>)
-							.then((data) => setName(data.name));
-					}}
-					aria-label="get name"
-				>
-					Name from API is: {name}
-				</button>
-				<p>
-					Edit <code>worker/index.ts</code> to change the name
-				</p>
-			</div>
-			<p className="read-the-docs">Click on the logos to learn more</p>
-		</>
-	);
+        <section className="card">
+          <h3>AI Tools for Side Hustles</h3>
+          <p>
+            Prompts, workflows, and automations that help you write better listings, analyze items, and
+            save time.
+          </p>
+          <a href="/ai/">Explore AI →</a>
+        </section>
+
+        <section className="card card-accent">
+          <h3>Get the Weekly Playbook</h3>
+          <p>One email per week with frameworks, checklists, and tools you can use right away.</p>
+          <a href="/newsletter/">Subscribe →</a>
+          <p className="micro">Start with the Reselling + AI onboarding sequence.</p>
+        </section>
+      </main>
+
+      <footer className="footer">
+        <div className="container">
+          <p>© {new Date().getFullYear()} Easters.live | Built for creators, hustlers, and builders.</p>
+          <nav>
+            <a href="/about/">About</a> | <a href="/contact/">Contact</a> |{" "}
+            <a href="/privacy/">Privacy Policy</a> | <a href="/terms/">Terms</a>
+          </nav>
+        </div>
+      </footer>
+
+      <ChatWidget />
+    </>
+  );
 }
-
-export default App;

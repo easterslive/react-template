@@ -88,3 +88,13 @@ npx wrangler tail
 - [Vite Documentation](https://vitejs.dev/guide/)
 - [React Documentation](https://reactjs.org/)
 - [Hono Documentation](https://hono.dev/)
+
+## EastersAI UI (React + Vite)
+
+- Homepage UI: `src/react-app/App.tsx`
+- Chat widget: `src/react-app/ChatWidget.tsx`
+- Styles: `src/react-app/styles.css`
+- API endpoint expected: `POST /api/chat` (Cloudflare Worker / Hono route)
+
+If your API is hosted on another domain, edit `ChatWidget.tsx` and set `endpoint` to:
+`https://thriftbot.app/api/chat`
